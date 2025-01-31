@@ -3,6 +3,14 @@ import json
 import pandas as pd
 from modelo import run_simulation, process_parameters, include_stacked_chart_diagram_for_good_quality_components, plot_results, plot_stacked_chart, plot_discarded_components_stacked_chart
 
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
+
+# Example logging usage
+logging.debug("Debugging started in app.py")
+
 # Título
 st.title("Remanufacturing Process Simulation")
 st.markdown(
