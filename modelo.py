@@ -954,7 +954,7 @@ def plot_discarded_components_stacked_chart(monitoring_data):
     plt.grid(True)
     st.pyplot(fig)
 
-
+@st.cache_data
 def run_simulation(simulation_time, process_parameters, generate_plots = False):
     #print("Contenido de process_parameters:", process_parameters.keys())
     # Validar que process_parameters contiene todas las claves necesarias
