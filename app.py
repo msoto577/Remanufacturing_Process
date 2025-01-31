@@ -4,10 +4,24 @@ import pandas as pd
 from modelo import run_simulation, process_parameters, include_stacked_chart_diagram_for_good_quality_components, plot_results, plot_stacked_chart, plot_discarded_components_stacked_chart
 
 import logging
+import time
+import threading
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
 logging.debug("Debugging started in app.py")
+
+def keep_alive():
+    """Evita que la app se desconecte enviando señales de actividad cada 30 segundos."""
+    placeholder = st.empty()  # Crea un espacio invisible en la interfaz
+    count = 0
+    while True:
+        count += 1
+        placeholder.text(f"Keep-alive ping {count}")  # Actualiza la UI silenciosamente
+        time.sleep(30)  # Espera 30 segundos antes de la siguiente actualización
+
+keep_alive_thread = threading.Thread(target=keep_alive, daemon=True)
+keep_alive_thread.start()
 
 # Título
 st.title("Remanufacturing Process Simulation")
