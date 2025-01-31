@@ -7,8 +7,6 @@ import logging
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
-
-# Example logging usage
 logging.debug("Debugging started in app.py")
 
 # Título
